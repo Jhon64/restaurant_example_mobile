@@ -1,0 +1,5 @@
+package com.jhon64.restaurant_example.controllers;
+
+public class HelloWorldController {
+
+}
