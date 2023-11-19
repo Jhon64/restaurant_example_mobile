@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
+import './_routers.dart';
 
 class App extends StatelessWidget {
-  const App({super.key});
+  final bool logged;
+  const App({super.key,required this.logged});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(title: Text("hello world")),
-      ),
       debugShowCheckedModeBanner: false,
+      routes: routers,
+      initialRoute: !logged ? "/" : "/home",
       theme: ThemeData(
-          colorScheme: ColorScheme.light().copyWith(
+          colorScheme: const ColorScheme.light().copyWith(
               primary: Colors.greenAccent, secondary: Colors.greenAccent)),
     );
   }
